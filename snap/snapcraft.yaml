@@ -1,0 +1,19 @@
+name: testapp
+version: '0.1'
+summary: python test package
+description: |
+ test app for python
+base: core22
+architectures:
+  - build-on: arm64
+grade: stable
+confinement: devmode
+
+apps:
+  testapp:
+    command: bin/hello
+    plugs: [home,network-bind]
+parts:
+  testapp:
+    plugin: python
+    source: .
